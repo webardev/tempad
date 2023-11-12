@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #924200;
+    border-radius: 100px;
+    
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #FC7302;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 10px;
+    
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff8929;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 10px;
+}
+
+
+.main{
+    background-color: #1F1F18;
+    height: 100vh;
+    width: 100%;
+}
+
+.tempad{
+    background: url('./images/bg.png');
+    background-repeat: repeat;
+    background-size:900px;
+    background-color: transparent;
+    height: 90vh;
+    width: 95%;
+    border: 2px solid orange;
+    filter: drop-shadow(0px 0px 10px #924200a6);
+    box-shadow: inset 0px 0px 10px #924200a6;
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.temp-home{
+    background-color: transparent;
+    height: 88vh;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8vh;
+    transition: 0.3s;
+}
+
+.loader{
+    background-color: #1F1F18;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.logo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 15vh;
+}
+
+.temp-right{
+    text-transform:uppercase;
+}
+
+.temp-right h1{
+    color: #FC7302;
+    font-size: 8vh;
+    text-shadow: 1px 1px 10px #924200a6;
+}
+
+.temp-right ol{
+    color: #924200;
+    font-size: 6vh;
+    margin-left: 10vh;
+    margin-top: 5vh;
+}
+.temp-right li{
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.temp-right li:hover{
+    text-shadow: 1px 1px 10px #924200a6;
+    color: #FC7302;
+    cursor: pointer;
+}
+
+.temp-left{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.tempcard{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #FC7302;
+    /* justify-content: center; */
+    text-transform: uppercase;
+    margin: 0px 3vh;
+    transition: 0.3s;
+}
+
+.tempcard img{
+    width: 30vh;
+}
+
+.tempcard h2{
+    font-size: 4vh;
+    margin-top: -5%;
+    text-shadow: 0px 0px 10px #924200a6;
+}
+
+.tempcard:hover{
+    filter: drop-shadow(1px 1px 20px #ff7300a6);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.tempcard:active{
+    transform: none;
+}
+
+
+.side-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 1%;
+    bottom: 10%;
+}
+
+.side-menu img{
+    width: 4vh;
+    margin-top: 5vh;
+}
+
+.coordinate{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    font-size: 3vh;
+    color: #FC7302;
+    font-weight: 100;
+}
+.time{
+    margin-left: 1vh;
+}
+.location{
+    margin-left: 15vh;
+}
+
+.back-btn{
+    background-color: #FC7302;
+    height: 5vh;
+    width: 10vh;
+    position: absolute;
+    top: 1%;
+    left: 0.5%;
+    z-index: 999;
+}
+
+/* .clearing{
+    display: none;
+    position: absolute;
+    color: #FC7302;
+    width: 60vh;
+    height: auto;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #1F1F18;
+    padding: 1vh;
+    box-shadow: 0px 0px 10px #FC7302;
+    border: 1px solid #FC7302;
+    font-size: 2vh;
+}
+.load{
+    background-color: black;
+    width: 100%;
+    height: 3vh;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.load::before{
+    content: "";
+    position: absolute;
+    width: 30vh;
+    height: 50vh;
+    background-color: #FC7302;
+    transform: rotate(45deg) translate(-55vh, -10vh);
+    transition: 0.5s;
+    animation: clear 1s 1 linear;
+}
+
+
+@keyframes clear {
+    from {
+    }
+
+    to {
+    transform: translateY(-1vh);
+    width: 90vh;
+    }
+} */
+
+.timedoor{
+    display: flex;
+    opacity: 0;
+    align-items: start;
+    justify-content: space-around;
+    width: 100%;
+    /* height: 100vh; */
+    color: #FC7302;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: 0.3s;
+    
+}
+
+.maintime h1{
+    font-size: 10vh;
+}
+
+.time-img{
+    width: 100%;
+    height: 40vh;
+    border: 0.5vh solid #FC7302;
+    margin: 3vh 0;
+    background: url('https://i.redd.it/i-would-love-to-see-a-version-of-earth-that-resembles-v0-uetnyru14kz91.jpg?width=2048&format=pjpg&auto=webp&s=2208cfd6ae8b6d47db44d62da0b951d46594f2fe');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: sepia(1);
+}
+
+.time-name{
+    font-size: 7vh;
+}
+
+.travel-code{
+    font-size: 3vh;
+}
+.saved{
+    text-align: center;
+}
+.saved h1{
+    font-size: 5vh;
+}
+
+.ava-times{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    padding: 1vh 2vh;
+    color: #FC7302;
+    margin-top: 6vh;
+    overflow-y: scroll;
+    height: 60vh;
+}
+
+.ava-times button{
+    font-size: 4vh;
+    text-transform: uppercase;
+    /* background-color: #FC7302; */
+    padding: 0.6vh 13vh;
+    margin: 1vh 0;
+    border: 0.5vh solid #FC7302;
+    color: #FC7302;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.ava-times button:hover{
+    background-color: #FC7302;
+    color: black;
+    
+}
+
+.directory{
+    width: 93%;
+    height: 75vh;
+    position: absolute;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48.7%, -50%);
+    transition: 0.3s;
+    border: 0.5vh solid #FC7302;
+    opacity: 0;
+    z-index: -1;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    width: 36vh;
+    position: absolute;
+    top: 2%;
+    right: 1%;
+}
+.profile button{
+    padding: 0.5vh;
+    font-size: 2.3vh;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+.profile-head{
+    background-color: transparent;
+    color: #FC7302;
+    border: 0.5vh solid #FC7302;
+}
+.profile-img{
+    height: 40vh;
+    width: 100%;
+    background: url("https://www.themarysue.com/wp-content/uploads/2023/11/loki-new-horns.jpg?w=1200&resize=2400%2C1366");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0.5vh solid #FC7302;
+    margin: 0.5vh 0;
+    box-shadow: inset 0px 0px 30px rgb(0, 0, 0);
+    filter: sepia(1);
+}
+.var-identity{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff8929;
+    color: black;
+    border: none;
+}
+
+.timeline{
+    width: 76%;
+    height: 40vh;
+    background-color: transparent;
+    position: relative;
+    top: 10%;
+    left: 0;
+    z-index: -1;
+    border-top: 2vh solid #CF4048;
+    border-bottom: 0.5vh solid #ADAEB2;
+    text-transform: uppercase;
+    padding: 3vh 0vh 0vh 3vh;
+}
+.timeline, .points{
+    text-shadow: 0px 0px 10px #d09d5f73;
+}
+
+.timeline h1{
+    font-size: 6vh;
+    color: #FC7302;
+}
+.timeline h2{
+    font-size: 3.5vh;
+    color: #FC7302;
+}
+
+.timeline-dets{
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    color: #ADAEB2;
+    text-transform: uppercase;
+    font-size: 2vh;
+}
+
+.timeline img{
+    width: 10vh;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transition: 2s;
+    
+}
+.points{
+    color: #FC7302;   
+    font-size: 2.5vh;
+}
+
+.vert-points{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+    top: 10%;
+    align-items: center;
+}
+
+.hor-points{
+    width: 74%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 15%;
+    left: 2%;
+}
